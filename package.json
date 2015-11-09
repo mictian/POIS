@@ -1,0 +1,28 @@
+{
+  "name": "pois",
+  "version": "1.0.0",
+  "description": "point of interestes sazara pois",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "express": "*",
+    "gulp": "*",
+    "gulp-jasmine": "*"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mictian/POIS.git"
+  },
+  "author": "RioDeLaPlata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mictian/POIS/issues"
+  },
+  "homepage": "https://github.com/Mictian/POIS#readme"
+}
