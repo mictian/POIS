@@ -1,7 +1,7 @@
 
-module.exports = function (name, lat, lon)
+module.exports = function (name, lat, lon, appId)
 {
-	if (!name || !lat || !lon)
+	if (!name || !lat || !lon || !appId)
 	{
 		throw new Error ('Invalid initialization parameters');
 	}
@@ -9,6 +9,7 @@ module.exports = function (name, lat, lon)
 	return {
 		name: name,
 		lat: lat,
-		lon: lon
+		lon: lon,
+		appId: appId
 	};
 }

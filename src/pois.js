@@ -26,9 +26,12 @@ function getDistance (poi1, poi2)
 }
 
 module.exports = {
-	get: function ()
+	get: function (appId)
 	{
-		return _pois;
+		if (!appId)
+			return _pois;
+
+		return _.where(_pois, {appId: Number(appId)});
 	},
 	setDB: function (poisDB)
 	{
@@ -39,7 +42,7 @@ module.exports = {
 		var minPOI
 		,	distance = Number.MAX_VALUE;
 
-		_.each(this.get(), function (poi)
+		_.each(this.get(targetPOI.appId), function (poi)
 			{
 				var aux = getDistance(targetPOI, poi);
 				if (aux < distance)

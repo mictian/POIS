@@ -8,12 +8,13 @@ pois.setDB(db);
 var app = express();
 
 
-app.get('/pois/searchNearest/:lat/:lon', function (req, res)
+app.get('/v1/:appId/pois/searchNearest/:lat/:lon', function (req, res)
 {
-	console.log();
-	var result = pois.searchNearest(poi('any', req.params.lat, req.params.lon));
+	var targetPoi = poi('any', req.params.lat, req.params.lon, req.params.appId);
+	var result = pois.searchNearest(targetPoi);
+
 	res.send(result);
-})
+});
 
 app.listen(7777);
 
