@@ -1,5 +1,5 @@
 
-module.export = function (name, lat, lon)
+module.exports = function (name, lat, lon)
 {
 	if (!name || !lat || !lon)
 	{
