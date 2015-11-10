@@ -13,7 +13,7 @@
     "gulp-jasmine": "*"
   },
   "scripts": {
-    "test": "test"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",

@@ -6,8 +6,3 @@ gulp.task('default', function () {
     return gulp.src('./specs/*')
         .pipe(jasmine());
 });
-
-gulp.task('tests', function ()
-{
-
-})

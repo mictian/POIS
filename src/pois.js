@@ -53,5 +53,25 @@ module.exports = {
 			});
 
 		return minPOI;
+	},
+	searchPoiByDistance: function (targetPOI,radius)
+	{
+		 if(radius<=0)
+		 	throw new Error('Invalid distance');
+
+		var minPOI;
+		var radiusPOIS=[];
+
+		_.each(this.get(targetPOI.appId), function (poi)
+			{
+				var aux = getDistance(targetPOI, poi);
+
+				if (aux <= radius)
+				{
+					radiusPOIS.push(poi);
+				}
+			});
+
+		return radiusPOIS;
 	}
 }
