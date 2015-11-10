@@ -19,7 +19,7 @@ describe('POIS behavior', function ()
 	{
 		dbPOIS.setDB(db);
 
-		expect(dbPOIS.searchPoiByDistance(poi('GE',-34.609518, -58.396253,1),500).length).toBe(2);
+		expect(dbPOIS.searchPoiByDistance(poi('GE',-34.609518, -58.396253,1),500).length).toBe(1);
 		expect(dbPOIS.searchPoiByDistance(poi('GE',-34.609518, -58.396253,1),500)).toBe(poi('Alsina', -34.611510, -58.393490, 1));
 	});
 
