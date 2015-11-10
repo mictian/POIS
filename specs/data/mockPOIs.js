@@ -7,4 +7,5 @@ module.exports = [
 	poi('Puerto Madero', -34.609532, -58.366539, 2),
 	poi('Antares', -34.613823, -58.373513, 1),
 	poi('Plaza San Martin', -34.594784, -58.375316, 2)
+
 ]
