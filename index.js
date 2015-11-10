@@ -16,8 +16,15 @@ app.get('/v1/:appId/pois/searchNearest/:lat/:lon', function (req, res)
 	res.send(result);
 });
 
+
+app.get('/v1/:appId/pois/searchByDistance/:lat/:lon/:radius', function (req, res)
+{
+	var targetPoi = poi('any', req.params.lat, req.params.lon, req.params.appId);
+	var result = pois.searchPoiByDistance(targetPoi,req.params.radius);
+
+	res.send(result);
+});
+
 app.listen(7777);
-
-
 //WE:
 //-34.609518, -58.396253
