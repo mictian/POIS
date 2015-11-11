@@ -1,11 +1,18 @@
-var poisDB = require('./specs/data/mockPOIs'),
-	poi = require('./src/poi'),
+var poi = require('./src/poi'),
 	express = require('express'),
 	pois = require('./src/pois'),
 	itinerariesDB = require('./specs/data/mockItenerary'),
-	itineraries = require('./src/itineraries')
+	itineraries = require('./src/itineraries'),
 	categoriesDB = require('./specs/data/mockCategory'),
-	categories = require('./src/categories')
+	categories = require('./src/categories'),
+	_ = require('underscore');
+
+var poisDB = [];
+_.each(categoriesDB, function(category)
+{
+	poisDB = poisDB.concat(category.pois);
+})
+
 
 pois.setDB(poisDB);
 itineraries.setDB(itinerariesDB);
