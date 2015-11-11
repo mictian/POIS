@@ -4,9 +4,12 @@ var poisDB = require('./specs/data/mockPOIs'),
 	pois = require('./src/pois'),
 	itinerariesDB = require('./specs/data/mockItenerary'),
 	itineraries = require('./src/itineraries')
+	categoriesDB = require('./specs/data/mockCategory'),
+	categories = require('./src/categories')
 
 pois.setDB(poisDB);
 itineraries.setDB(itinerariesDB);
+categories.setDB(categoriesDB);
 
 var app = express();
 
@@ -22,6 +25,13 @@ app.get('/v1/:appId/pois/searchNearest/:lat/:lon', function (req, res)
 app.get('/v1/:appId/itineraries/getByName/:name', function (req, res)
 {
 	var result = itineraries.getItineraryByName(req.params.name, req.params.appId);
+
+	res.send(result);
+});
+
+app.get('/v1/:appId/category/getByName/:name', function (req, res)
+{
+	var result = categories.getCategoriesByName(req.params.name, req.params.appId);
 
 	res.send(result);
 })
